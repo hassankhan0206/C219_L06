@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Bootstrap Hero</title>
+    <style>
+        /* Add your custom styles here */
+        .carousel {
+            margin-top: 20px;
+            /* Adjust the margin as needed */
+        }
+
+        .carousel-inner {
+            max-height: 300px;
+            /* Adjust the max-height as needed */
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 100px;
+            /* Adjust the margin as needed */
+        }
+
+        .card {
+            width: 100%;
+            /* Adjust the width as needed */
+            margin-bottom: 20px;
+            /* Adjust the margin as needed */
+        }
+
+        .card-img-top {
+            object-fit: cover;
+            height: 200px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Create three equal columns that floats next to each other */
+        .column {
+
+            width: 30%;
+            padding: 30px;
+            height: 100px;
+            /* Should be removed. Only for demonstration */
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        
+footer { 
+            padding-left: 100px; 
+            padding-right: 100px; 
+            padding-bottom: 20px; 
+            text-align: center; 
+        } 
+ 
+        .footer-line { 
+            border-top: 1px solid #ddd; 
+            margin-bottom: 20px; 
+        } 
+ 
+        .footer-content { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        } 
+ 
+        .footer-links { 
+            list-style-type: none; 
+            margin: 0; 
+            padding: 0; 
+        } 
+ 
+        .footer-links a { 
+            color: black; 
+            display: inline-block; 
+            margin-right: 15px; 
+            text-decoration: none; 
+        }
+
+
+
+        /* Media query for screens with a maximum width of 768px */
+        @media (max-width: 768px) {
+            .carousel-inner {
+                max-height: 200px;
+                /* Adjust the max-height as needed for smaller screens */
+            }
+
+            .card-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+
+            .card {
+                width: 80%;
+                /* Adjust the width as needed for smaller screens */
+            }
+
+            .column {
+                width: 100%;
+                padding: 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">SOI Learning Portal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+
+                <!-- Search bar -->
+                <form class="d-flex">
+                    <input class="form-control me-2" type="text" placeholder="Search">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </form>
+
+                <!-- Notif Bell -->
+                <a class="navbar-brand px-2 ms-auto" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-bell" viewBox="0 0 16 16">
+                        <path
+                            d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
+                    </svg>
+                </a>
+
+                <!-- Avatar Logo -->
+                <a class="navbar-brand px-2" href="#">
+                    <img src="Assets/logo.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
+                </a>
+
+
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carousel
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active"><img src="http://source.unsplash.com/HyfyPokc0dA" class="d-block w-100"></div>
+            <div class="carousel-item"><img src="http://source.unsplash.com/hqJfWVY1v3M" class="d-block w-100"></div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div> -->
+
+
+    <!-- Hero Row -->
+    <!-- Add a fluid container so that the hero fills the browser width -->
+    <div class="container-fluid bg-primary text-white p-5">
+
+        <!-- Add a container here for responsiveness -->
+        <div class="container-lg">
+
+            <!-- Add a row here that will contain 2 columns -->
+            <div class="row text-light pt-5">
+
+                <!-- Add a column here for text -->
+                <div class="col-md-6 col-sm-7 pb-5">
+                    <p class="text"></p>
+                    <h1 class="ps-2">Welcome to <br> SOI Learning Portal</h1>
+                    <p class="lead ps-2">Expertly crafted courses that best fit your <br> learning needs and
+                        preferences.</p>
+                    <button type="button" class="btn btn-dark mb-5 fw-bold">Browse Courses</button>
+                    <button type="button" class="btn btn-dark mb-5 fw-bold">Be An Instructor</button>
+                </div>
+
+                <!-- Add a column here for the image -->
+                <div class="col-md-6">
+                    <img src="Assets/Hero.png" class="img-fluid" width="200">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3 circles -->
+    <div class="row justify-content-center">
+        <div class="column" style="text-align: center;">
+            <img src="Assets/book.png" width="70" height="70">
+            <h2>158 online courses</h2>
+            <p>Enjoy a variety of fresh topics</p>
+        </div>
+        <div class="column" style="text-align: center;">
+            <img src="Assets/businessman.png" width="70" height="70">
+            <h2>Expert Instruction</h2>
+            <p>Find the right instructor for you</p>
+        </div>
+        <div class="column" style="text-align: center;">
+            <img src="Assets/history.png" width="70" height="70">
+            <h2>Lifetime Access</h2>
+            <p>Learn on your schedule</p>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Cards -->
+    <div class="container card-container">
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="Assets/html5.png" class="card-img-top" alt="Plants">
+                    <div class="card-body">
+                        <h5 class="card-title">Introduction to HTML and CSS</h5>
+                        <p class="card-text"><img src="Assets/clock.png" width="15" height="15"> 2h 30m</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <div>
+                            <img src="Assets/logo.png" width="15" height="15">
+                            Hannah Lim
+                        </div>
+                        <img src="Assets/bookmark.png" width="15" height="15">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="Assets/UI.png" class="card-img-top" alt="Plants">
+                    <div class="card-body">
+                        <h5 class="card-title">User Experience and Interface Design</h5>
+                        <p class="card-text"><img src="Assets/clock.png" width="15" height="15"> 2h 45m</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <div>
+                            <img src="Assets/logo.png" width="15" height="15">
+                            Julia Lee
+                        </div>
+                        <img src="Assets/bookmark.png" width="15" height="15">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="Assets/iOS.png" class="card-img-top" alt="Plants">
+                    <div class="card-body">
+                        <h5 class="card-title">iOS App Development using Xcode and Swift</h5>
+                        <p class="card-text"><img src="Assets/clock.png" width="15" height="15"> 4h 30m</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <div>
+                            <img src="Assets/logo.png" width="15" height="15">
+                            Ryan Low
+                        </div>
+                        <img src="Assets/bookmark.png" width="15" height="15">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="Assets/Javascript.png" class="card-img-top" alt="Plants">
+                    <div class="card-body">
+                        <h5 class="card-title">Front-end Javascript Frameworks</h5>
+                        <p class="card-text"><img src="Assets/clock.png" width="15" height="15"> 3h 45m</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <div>
+                            <img src="Assets/logo.png" width="15" height="15">
+                            Azhar Kamar
+                        </div>
+                        <img src="Assets/bookmark.png" width="15" height="15">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+<footer> 
+    <div class="footer-line"></div> 
+    <div class="footer-content"> 
+        <span>© 2021 SOI Learning Portal. All Rights Reserved.</span> 
+        <ul class="footer-links"> 
+            <a href="#">Privacy</a> 
+            <a href="#">Terms</a> 
+            <a href="#">Feedback</a> 
+            <a href="#">Support</a> 
+        </ul> 
+    </div> 
+</footer>
+
+</body>
+
+</html>
